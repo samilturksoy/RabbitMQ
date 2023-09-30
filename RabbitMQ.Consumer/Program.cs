@@ -11,7 +11,7 @@ using IConnection connection = factory.CreateConnection();
 using IModel channel = connection.CreateModel();
 
 //Queve oluşturma 
-channel.QueueDeclare(queue: "example-queve", exclusive: false);
+channel.QueueDeclare(queue: "example-queve", exclusive: false,durable : true);
 
 //Queve mesaj okuma
 EventingBasicConsumer consumer = new(channel);

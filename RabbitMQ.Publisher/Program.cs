@@ -13,7 +13,7 @@ using IModel channel = connection.CreateModel();
 
 //queve olusturma
 // RabitMQ sunucusu çökerse kuruktaki tüm messagelar kayboluyor bunu önleme için öncelikle 1.yapılandırma QueueDeclare dyrable:true değerini veriyoruz
-channel.QueueDeclare(queue: "example-queve", exclusive: false);
+channel.QueueDeclare(queue: "example-queve", exclusive: false, durable : true);
 
 //queve mesaj gonderme RabbitMQ kuyruğa atacağı mesajları byte türünden kabul etmektedir.
 
