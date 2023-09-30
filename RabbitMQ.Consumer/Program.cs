@@ -16,6 +16,8 @@ channel.QueueDeclare(queue: "example-queve", exclusive: false,durable : true);
 //Queve mesaj okuma
 EventingBasicConsumer consumer = new(channel);
 channel.BasicConsume(queue: "example-queve", autoAck: false, consumer);
+//tüm consumerlar eşit miktarda çalışşın ve veri işlesin
+channel.BasicQos(0, 1, false);
 consumer.Received += (sender, e) =>
 {
     //kuyruğa gelen mesajın işlediğim yer
