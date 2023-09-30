@@ -4,8 +4,8 @@ using RabbitMQ.Client.Events;
 using System.Text;
 
 ConnectionFactory factory = new();
-//factory.Uri = new Uri("..");
-factory.HostName = "localhost";
+//factory.Uri = new Uri("..");cloud url kullanılacaksa
+factory.HostName = "localhost";//docker üzerinden 
 // Bağlantı Aktifleştirme ve Kanal Açma
 using IConnection connection = factory.CreateConnection();
 using IModel channel = connection.CreateModel();
